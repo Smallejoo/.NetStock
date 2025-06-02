@@ -31,3 +31,11 @@ C:\Users\User\OneDrive\Desktop\C# projects\C# projects\STOCK\ArmyStockApp\obj\De
 C:\Users\User\OneDrive\Desktop\C# projects\C# projects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.pdb
 C:\Users\User\OneDrive\Desktop\C# projects\C# projects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.genruntimeconfig.cache
 C:\Users\User\OneDrive\Desktop\C# projects\C# projects\STOCK\ArmyStockApp\obj\Debug\net8.0\ref\ArmyStockApp.dll
+C:\Users\User\OneDrive\Desktop\C# projects\C# projects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.sourcelink.json
+C:\Users\User\OneDrive\Desktop\C# projects\C# projects\STOCK\ArmyStockApp\bin\Debug\net8.0\settings\appsettings.json
+C:\Users\User\OneDrive\Desktop\C# projects\C# projects\STOCK\ArmyStockApp\bin\Debug\net8.0\DnsClient.dll
+C:\Users\User\OneDrive\Desktop\C# projects\C# projects\STOCK\ArmyStockApp\bin\Debug\net8.0\MongoDB.Bson.dll
+C:\Users\User\OneDrive\Desktop\C# projects\C# projects\STOCK\ArmyStockApp\bin\Debug\net8.0\MongoDB.Driver.dll
+C:\Users\User\OneDrive\Desktop\C# projects\C# projects\STOCK\ArmyStockApp\bin\Debug\net8.0\SharpCompress.dll
+C:\Users\User\OneDrive\Desktop\C# projects\C# projects\STOCK\ArmyStockApp\bin\Debug\net8.0\Snappier.dll
+C:\Users\User\OneDrive\Desktop\C# projects\C# projects\STOCK\ArmyStockApp\bin\Debug\net8.0\ZstdSharp.dll
