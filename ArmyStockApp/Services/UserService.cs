@@ -16,6 +16,21 @@ namespace ArmyStockApp.Services
             var db = client.GetDatabase(settings.Value.DatabaseName);
             _Users = db.GetCollection<User>("Users");
         }
+
+        public async Task<bool> PatchEmailAsync(User user, string newEmail)
+        {
+           var existing= await LogInCheckAsync(user.userName, user.password);
+            if (existing != null)
+            {
+                var filterd = Builders < User >. Filter.Eq(u => u.Id , existing.Id);
+                var update = Builders<User>.Update.Set(u => u.email, newEmail);
+
+                var result = await _Users.UpdateOneAsync(filterd, update);
+                return result.ModifiedCount > 0;
+            }
+            return false;
+        }
+
         public async Task<User> GetByEmailAsync(string email)
         {
             var theOne = await _Users.Find(u => u.email == email).FirstOrDefaultAsync();
@@ -30,21 +45,22 @@ namespace ArmyStockApp.Services
 
         public async Task<bool> CreateAsync(User user)
         {
-            var existing = _Users.Find(u => u.userName == user.userName || u.email == user.email).FirstOrDefaultAsync();
-            if (existing)
+            var existing = await _Users.Find(u => u.userName == user.userName || u.email == user.email).FirstOrDefaultAsync();
+            if (existing== null)
             {
-                return false;
+                user.password = BCrypt.Net.BCrypt.HashPassword(user.password);
+                await _Users.InsertOneAsync(user);
+                return true;
             }
-            user.password = BCrypt.Net.BCrypt.HashPassword(user.password);
-            await _Users.InsertOneAsync(user);
-            return true;
+            return false;
         }
         public async Task<User> LogInCheckAsync(string userName, string password)
         {
 
             var theOne = await _Users.Find(u => u.userName == userName && u.password == password).FirstOrDefaultAsync();
+            if(theOne!=null)
             return theOne;
-
+            return null;
         }
 
         public async Task<bool> DeleteUserAsync(string email)
@@ -54,7 +70,7 @@ namespace ArmyStockApp.Services
             {
                 return false;
             }
-            _Users.DeleteAsync(u => u.email == email);
+            await _Users.DeleteOneAsync(u => u.email == email);
             return true;
         }
 
