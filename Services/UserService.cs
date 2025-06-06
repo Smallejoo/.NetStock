@@ -18,7 +18,7 @@ namespace ArmyStockApp.Services
         }
         
             
-        public async Task<bool> PatchEmailAsync(User user, string newEmail)
+        public async Task<bool> PatchEmailAsync(LogInfo user, string newEmail)
         {
             var existing = await LogInCheckAsync(user.userName, user.password);
             if (existing != null)
@@ -32,15 +32,22 @@ namespace ArmyStockApp.Services
             return false;
         }
 
-        public async Task<bool> PatchPasswordAsync(User user, string newPassword)
+        public async Task<bool> PatchPasswordAsync(LogInfo user, string newPassword,bool flag)
         {
-            var existing = await LogInCheckAsync(user.userName, user.password);
+            var encripted = BCrypt.Net.BCrypt.HashPassword(newPassword);
+            User existing=null;
+            if (!flag)
+                 existing = await LogInCheckAsync(user.userName, user.password);
+            else
+                 existing = await LogInCheckForgotAsync(user.userName, user.password);
+
             if (existing != null)
             {
                 var filterd = Builders<User>.Filter.Eq(u => u.Id, existing.Id);
-                var update = Builders<User>.Update.Set(u => u.password, newPassword);
+                var update = Builders<User>.Update.Set(u => u.password, encripted);
 
                 var result = await _Users.UpdateOneAsync(filterd, update);
+                
                 return result.ModifiedCount > 0;
             }
             return false;
@@ -72,15 +79,27 @@ namespace ArmyStockApp.Services
         {
 
             var theOne = await _Users.Find(u => u.userName == userName).FirstOrDefaultAsync();
-            if (theOne != null && BCrypt.Net.BCrypt.Verify(password, theOne.password)) 
-                 return theOne;
+            
+            if (theOne != null && BCrypt.Net.BCrypt.Verify(password, theOne.password))
+                return theOne;
+            return null;
+        }
+
+        public async Task<User> LogInCheckForgotAsync(string userName, string email)
+        {
+
+            var theOne = await _Users.Find(u => u.userName == userName &&u.email==email).FirstOrDefaultAsync();
+            if (theOne != null)
+            { 
+                return theOne;
+            }
             return null;
         }
 
         public async Task<bool> DeleteUserAsync(string email)
         {
             var existing = await _Users.Find(u => u.email == email).FirstOrDefaultAsync();
-            if (existing==null)
+            if (existing == null)
             {
                 return false;
             }

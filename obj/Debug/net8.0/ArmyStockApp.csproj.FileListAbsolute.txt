@@ -6,6 +6,14 @@ C:\Users\User\OneDrive\Desktop\C# projects\C# projects\STOCK\X2\ArmyStockApp\obj
 C:\Users\User\OneDrive\Desktop\C# projects\C# projects\STOCK\X2\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\User\OneDrive\Desktop\C# projects\C# projects\STOCK\X2\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\User\OneDrive\Desktop\C# projects\C# projects\STOCK\X2\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.sourcelink.json
+C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.AssemblyInfo.cs
+C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.sourcelink.json
 C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\bin\Debug\net8.0\appsettings.json
 C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\bin\Debug\net8.0\settings\appsettings.json
@@ -33,13 +41,6 @@ C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\bin\Debug\net8.
 C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
 C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
 C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
-C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.csproj.AssemblyReference.cache
-C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.AssemblyInfoInputs.cache
-C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.AssemblyInfo.cs
-C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.csproj.CoreCompileInputs.cache
-C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\staticwebassets\msbuild.ArmyStockApp.Microsoft.AspNetCore.StaticWebAssets.props

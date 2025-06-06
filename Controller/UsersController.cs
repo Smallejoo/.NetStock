@@ -1,5 +1,6 @@
 using ArmyStockApp.Models;
 using ArmyStockApp.Services;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ArmyStockApp.Controllers
@@ -17,8 +18,9 @@ namespace ArmyStockApp.Controllers
 
         //check if got one 
         [HttpGet("LogIn")]
-        public async Task<IActionResult> LogIn(string userName,string password)
+        public async Task<IActionResult> LogIn([FromQuery] string userName,[FromQuery]string password)
         {
+            
             var Authenticated =await _service.LogInCheckAsync(userName,password);
             if (Authenticated != null)
             {
@@ -30,7 +32,7 @@ namespace ArmyStockApp.Controllers
 
         //update email 
         [HttpPatch("ChangeEmail")]
-        public async Task<IActionResult> PatchEmail(User user,string newEmail)
+        public async Task<IActionResult> PatchEmail(LogInfo user,[FromQuery] string newEmail)
         {
             var Authenticated = await _service.LogInCheckAsync(user.userName, user.password);
             if (Authenticated!=null)
@@ -51,12 +53,26 @@ namespace ArmyStockApp.Controllers
 
         //update password 
         [HttpPatch("ChangePassword")]
-        public async Task<IActionResult> PatchPassword(User user, string newPassword)
+        public async Task<IActionResult> PatchPassword(LogInfo user, string newPassword)
         {
             var Authenticated = await _service.LogInCheckAsync(user.userName, user.password);
            if (Authenticated != null)
             {
-                var Success = await _service.PatchPasswordAsync(user, newPassword);
+                var Success = await _service.PatchPasswordAsync(user, newPassword,false);
+                if (Success)
+                    return Ok(user);
+
+            }
+            return BadRequest("Wrong password or username"); 
+
+        }
+         [HttpPatch("ForgotPassword")]
+        public async Task<IActionResult> PatchPasswordForgot(LogInfo user, string newPassword)
+        {       // here insted of the password you will send email . 
+            var Authenticated = await _service.LogInCheckForgotAsync(user.userName, user.password);
+           if (Authenticated != null)
+            {
+                var Success = await _service.PatchPasswordAsync(user, newPassword,true);
                 if (Success)
                     return Ok(user);
 
