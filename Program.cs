@@ -56,6 +56,8 @@ app.UseAuthorization();   // 🛂 Check if user is allowed to access specific ro
 
 app.MapControllers();    // Map controller routes to app 
 
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.UseStaticFiles(); // enable HTML/CSS/JS serving
 

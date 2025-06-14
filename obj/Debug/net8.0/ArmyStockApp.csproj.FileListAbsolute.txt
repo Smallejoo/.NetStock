@@ -56,3 +56,11 @@ C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.
 C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.genruntimeconfig.cache
 C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ref\ArmyStockApp.dll
 C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\bin\Debug\net8.0\ArmyStockApp.staticwebassets.runtime.json
+C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
