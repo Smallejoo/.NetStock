@@ -1,9 +1,12 @@
 using ArmyStockApp.Models;
 using ArmyStockApp.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
+    
 namespace ArmyStockApp.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
@@ -35,7 +38,7 @@ namespace ArmyStockApp.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(string id, [FromBody]Product updated)
+        public async Task<IActionResult> Put(string id, [FromBody] Product updated)
         {
             var existing = await _service.GetByIdAsync(id);
             if (existing == null) return NotFound();

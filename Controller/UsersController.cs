@@ -1,7 +1,12 @@
+using System.Data;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using ArmyStockApp.Models;
 using ArmyStockApp.Services;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace ArmyStockApp.Controllers
 {
@@ -21,13 +26,24 @@ namespace ArmyStockApp.Controllers
         public async Task<IActionResult> LogIn([FromQuery] string userName,[FromQuery]string password)
         {
             
-            var Authenticated =await _service.LogInCheckAsync(userName,password);
+            var Authenticated =await _service.LogInCheckAsync(userName,password); // check if user exists in our MongoDB
             if (Authenticated != null)
             {
-                return Ok(userName);    
+                var key = Encoding.UTF8.GetBytes("secret-key");  // starting to work on a token for security and Authintication 
+                var tokenHandler = new JwtSecurityTokenHandler();  // creating an object of a token 
+                var tokenDescription = new SecurityTokenDescriptor // configing 
+                {
+                    Subject = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, userName) }),
+                    Expires = DateTime.UtcNow.AddHours(1),   // its life expectency 
+                    Issuer = "ArmyStock",
+                    SigningCredentials =new SigningCredentials(new SymmetricSecurityKey(key)
+                    ,SecurityAlgorithms.HmacSha256Signature)
+                };
+                var token = tokenHandler.CreateToken(tokenDescription); // we actually create one 
+                return Ok(new{token=tokenHandler.WriteToken(token)} );   // make a string out of it and send it to the front 
             }
             
-         return BadRequest("Wrong password or username");
+         return Unauthorized("Wrong password or username");
         }
 
         //update email 

@@ -55,3 +55,4 @@ C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.
 C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.pdb
 C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ArmyStockApp.genruntimeconfig.cache
 C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\obj\Debug\net8.0\ref\ArmyStockApp.dll
+C:\Users\User\OneDrive\Desktop\DotNetProjects\STOCK\ArmyStockApp\bin\Debug\net8.0\ArmyStockApp.staticwebassets.runtime.json
