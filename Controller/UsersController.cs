@@ -29,7 +29,7 @@ namespace ArmyStockApp.Controllers
             var Authenticated =await _service.LogInCheckAsync(userName,password); // check if user exists in our MongoDB
             if (Authenticated != null)
             {
-                var key = Encoding.UTF8.GetBytes("this_is_a_very_strong_key_12345678!"); //+ you need this key to be 16+ chars . 
+                var key = Encoding.UTF8.GetBytes("this_is_a_very_strong_key_12345678!"); //has to be this long to work . 35 chars 
                  // starting to work on a token for security and Authintication 
                 var tokenHandler = new JwtSecurityTokenHandler();  // creating an object of a token 
                 var tokenDescription = new SecurityTokenDescriptor // configing 

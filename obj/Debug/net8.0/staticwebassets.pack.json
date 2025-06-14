@@ -1,20 +1,28 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\User\\OneDrive\\Desktop\\DotNetProjects\\STOCK\\ArmyStockApp\\wwwroot\\index.html",
-      "PackagePath": "staticwebassets\\index.html"
+      "Id": "C:\\Users\\User\\OneDrive\\Desktop\\DotNetProjects\\STOCK\\ArmyStockApp\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\OneDrive\\Desktop\\DotNetProjects\\STOCK\\ArmyStockApp\\wwwroot\\css\\products.css",
+      "PackagePath": "staticwebassets\\css\\products.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\OneDrive\\Desktop\\DotNetProjects\\STOCK\\ArmyStockApp\\wwwroot\\js\\login.js",
+      "PackagePath": "staticwebassets\\js\\login.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\OneDrive\\Desktop\\DotNetProjects\\STOCK\\ArmyStockApp\\wwwroot\\js\\products.js",
+      "PackagePath": "staticwebassets\\js\\products.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\OneDrive\\Desktop\\DotNetProjects\\STOCK\\ArmyStockApp\\wwwroot\\login.html",
+      "PackagePath": "staticwebassets\\login.html"
     },
     {
       "Id": "C:\\Users\\User\\OneDrive\\Desktop\\DotNetProjects\\STOCK\\ArmyStockApp\\wwwroot\\products.html",
       "PackagePath": "staticwebassets\\products.html"
-    },
-    {
-      "Id": "C:\\Users\\User\\OneDrive\\Desktop\\DotNetProjects\\STOCK\\ArmyStockApp\\wwwroot\\styles\\js\\app.js",
-      "PackagePath": "staticwebassets\\styles\\js\\app.js"
-    },
-    {
-      "Id": "C:\\Users\\User\\OneDrive\\Desktop\\DotNetProjects\\STOCK\\ArmyStockApp\\wwwroot\\styles\\style.css",
-      "PackagePath": "staticwebassets\\styles\\style.css"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ArmyStockApp.Microsoft.AspNetCore.StaticWebAssets.props",

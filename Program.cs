@@ -9,8 +9,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-var key = "dev-secret-key";
-var issuer = "your-app";
+var key = "this_is_a_very_strong_key_12345678!";
+var issuer = "ArmyStock";
 
 
 

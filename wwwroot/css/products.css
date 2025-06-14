@@ -1,0 +1,25 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fafafa;
+  margin: 0;
+  padding: 20px;
+}
+
+.product-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#product-list {
+  list-style: none;
+  padding: 0;
+}
+
+#product-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
