@@ -8,6 +8,7 @@
         document.getElementById("password").value);
 
       if (res.ok) {
+        alert("Getting in");
         const data = await res.json();
         localStorage.setItem("token", data.token); // 🧠 save token
         window.location.href = "products.html";    // go to stock page

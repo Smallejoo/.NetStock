@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\products.css"
     },
     {
+      "Id": "C:\\Users\\User\\OneDrive\\Desktop\\DotNetProjects\\STOCK\\ArmyStockApp\\wwwroot\\images\\OIP.jpg",
+      "PackagePath": "staticwebassets\\images\\OIP.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\OneDrive\\Desktop\\DotNetProjects\\STOCK\\ArmyStockApp\\wwwroot\\js\\login.js",
       "PackagePath": "staticwebassets\\js\\login.js"
     },

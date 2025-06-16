@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UjepLXjAsA+r9p4df2CA7mWzrnlLq3KTaQZagqxfjZk=",
+  "Hash": "n5/9vBV2HOU1Qkd/9KPZ4p77LCcbEtCaM18T5f+TH/Y=",
   "Source": "ArmyStockApp",
   "BasePath": "_content/ArmyStockApp",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\products.css"
+    },
+    {
+      "Identity": "C:\\Users\\User\\OneDrive\\Desktop\\DotNetProjects\\STOCK\\ArmyStockApp\\wwwroot\\images\\OIP.jpg",
+      "SourceId": "ArmyStockApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\OneDrive\\Desktop\\DotNetProjects\\STOCK\\ArmyStockApp\\wwwroot\\",
+      "BasePath": "_content/ArmyStockApp",
+      "RelativePath": "images/OIP.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\OIP.jpg"
     },
     {
       "Identity": "C:\\Users\\User\\OneDrive\\Desktop\\DotNetProjects\\STOCK\\ArmyStockApp\\wwwroot\\js\\login.js",

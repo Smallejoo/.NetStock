@@ -2,10 +2,35 @@
 <html>
 <head>
   <title>Stock</title>
-  <link rel="stylesheet" href="/css/products.css">
-  <script src="/js/products.js" defer></script>
+  <link rel="stylesheet" href="css/products.css">
+  <script src="js/products.js" defer></script>
 </head>
 <body>
+  <div class="overall-container">
+    <!-- Mid section with left (70%) and right (30%) -->
+    <div class="two-columns">
+      <div class="container left" id="mid-section-left">
+        <h3>My Storage</h3>
+        <!-- User-specific stock items go here -->
+        <ul id="user-stock-list"></ul>
+      </div>
+      <div class="container right" id="mid-section-right">
+        <h3>Available to Order</h3>
+        <!-- All items available to order go here -->
+        <ul id="available-items-list"></ul>
+      </div>
+    </div>
+
+    <!-- Bottom section: delivery tracking -->
+    <div class="container bottom" id="bottom-container">
+      <h3>In Delivery</h3>
+      <ul id="delivery-list"></ul>
+
+      <h3>Received (Needs Acknowledgement)</h3>
+      <ul id="received-list"></ul>
+    </div>
+  </div>
+
   <div class="product-container">
     <h2>Stock List</h2>
     <ul id="product-list"></ul>
