@@ -6,7 +6,10 @@
   <script src="js/products.js" defer></script>
 </head>
 <body>
+
+
   <div class="overall-container">
+
     <!-- Mid section with left (70%) and right (30%) -->
     <div class="two-columns">
       <div class="container left" id="mid-section-left">
@@ -23,17 +26,23 @@
 
     <!-- Bottom section: delivery tracking -->
     <div class="container bottom" id="bottom-container">
-      <h3>In Delivery</h3>
-      <ul id="delivery-list"></ul>
-
-      <h3>Received (Needs Acknowledgement)</h3>
-      <ul id="received-list"></ul>
+      <div class="two-columns">
+        <div class="container left">
+          <h3>In Delivery</h3>
+          <ul id="delivery-list"></ul>
+        </div>
+        <div class="container right">
+          <h3>Received (Needs Acknowledgement)</h3>
+          <ul id="received-list"></ul>
+          <button id="AcknoButton">Acknowledge</button>
+        </div>
+      </div>
     </div>
+
   </div>
 
   <div class="product-container">
-    <h2>Stock List</h2>
-    <ul id="product-list"></ul>
+    <h2 id="user-filed">User</h2>
     <button id="logOutButton">Logout</button>
   </div>
 </body>
