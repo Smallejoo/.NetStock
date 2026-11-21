@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stock demo</title>
+<style>body{font:16px system-ui;max-width:760px;margin:40px auto;padding:0 20px}input,button{font:inherit;margin:5px;padding:8px}label{display:block}#status{white-space:pre-wrap}fieldset{margin:20px 0}</style></head>
+<body><h1>Stock management demo</h1><p>Register or sign in to view and manage the shared demo inventory.</p>
+<fieldset><legend>Account</legend><label>Username <input id="username" autocomplete="username"></label><label>Email (registration) <input id="email" type="email"></label><label>Password <input id="password" type="password" autocomplete="current-password"></label><button id="register">Register</button><button id="login">Sign in</button><button id="logout">Sign out</button></fieldset>
+<fieldset><legend>Products</legend><button id="load">Load products</button><ul id="products"></ul><label>Name <input id="name"></label><label>Description <input id="description"></label><label>Price <input id="price" type="number" min="0" step="0.01"></label><label>Stock <input id="stock" type="number" min="0" step="1"></label><button id="add">Add product</button></fieldset><p id="status" role="status"></p>
+<script>
+let token = ''; // Memory only: reload requires another login.
+const field = id => document.getElementById(id);
+async function request(path, method='GET', body) {
+ const res=await fetch('/api/'+path,{method,headers:{'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{})},body:body===undefined?undefined:JSON.stringify(body)});
+ const text=await res.text(); if(!res.ok) throw new Error(res.status+': '+text);
+ return text?JSON.parse(text):null;
+}
+function action(id, fn){field(id).onclick=async()=>{try{await fn();field('status').textContent='Success';}catch(e){field('status').textContent=e.message;}}}
+action('register',()=>request('Users','POST',{userName:field('username').value,email:field('email').value,password:field('password').value}));
+action('login',async()=>{const result=await request('Users/login','POST',{userName:field('username').value,password:field('password').value});token=result.accessToken;field('password').value='';});
+action('logout',async()=>{token='';field('products').replaceChildren();});
+action('load',async()=>{const products=await request('Products');field('products').replaceChildren();for(const p of products){const li=document.createElement('li');li.textContent=p.name+' — stock '+p.stock+' — price '+p.price;field('products').append(li);}});
+action('add',()=>request('Products','POST',{name:field('name').value,description:field('description').value,price:Number(field('price').value),stock:Number(field('stock').value)}));
+</script></body></html>
