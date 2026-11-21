@@ -20,5 +20,6 @@ public class User
     /// Plain text password supplied during registration/login.
     /// Stored hashed in the database by <see cref="UserService"/>.
     /// </summary>
+    [System.Text.Json.Serialization.JsonIgnore]
     public string Password { get; set; } = string.Empty;
 }

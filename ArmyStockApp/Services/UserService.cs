@@ -11,7 +11,7 @@ using ArmyStockApp.settings;
 namespace ArmyStockApp.Services
 {
 
-    public class UserService
+    public class UserService : IUserService
     {
         private readonly IMongoCollection<User> _Users;
 
@@ -35,13 +35,13 @@ namespace ArmyStockApp.Services
             return false;
         }
 
-        public async Task<User> GetByEmailAsync(string email)
+        public async Task<User?> GetByEmailAsync(string email)
         {
             var theOne = await _Users.Find(u => u.Email == email).FirstOrDefaultAsync();
             return theOne;
         }
 
-        public async Task<User> GetByUserNameAsync(string userName)
+        public async Task<User?> GetByUserNameAsync(string userName)
         {
             var theOne = await _Users.Find(u => u.UserName == userName).FirstOrDefaultAsync();
             return theOne;

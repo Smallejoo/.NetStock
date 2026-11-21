@@ -1,37 +1,26 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using MongoDB.Driver;                 // for MongoClient
-using ArmyStockApp.Services;         // for ProductService
-using ArmyStockApp.settings;         // if you put MongoDbSettings.cs there
-
+using ArmyStockApp.Services;
+using ArmyStockApp.settings;
+using Microsoft.AspNetCore.Authentication.BearerToken;
+using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
-
-
-builder.Services.Configure<MongoDbSettings>(
-    builder.Configuration.GetSection("MongoDB")); // look up at appsettings for MongoDB settings . 
-
-builder.Services.AddSingleton<IMongoClient>(s =>
-    new MongoClient(builder.Configuration.GetSection("MongoDB:ConnectionString").Value));
-// adding to config mongo settings 
-
-
-// 👇 Register services here
-builder.Services.AddControllers(); // adds connection to ur apies . 
-
-builder.Services.AddSingleton<ProductService>();// adding our handeling layer.
-
-
-
+builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection("MongoDB"));
+builder.Services.AddSingleton<IMongoClient>(_ => new MongoClient(
+    builder.Configuration["MongoDB:ConnectionString"] ?? "mongodb://localhost:27017"));
+builder.Services.AddSingleton<IUserService, UserService>();
+builder.Services.AddSingleton<ProductService>();
+builder.Services.AddControllers();
+builder.Services.AddAuthentication(BearerTokenDefaults.AuthenticationScheme).AddBearerToken();
+builder.Services.AddAuthorization();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 var app = builder.Build();
-
-
-// Middleware
-app.UseAuthentication();  // 🔑 Check who the user is (token, etc.)
-app.UseAuthorization();   // 🛂 Check if user is allowed to access specific route
-
-
-app.MapControllers();    // Map controller routes to app 
-
+if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); }
+else { app.UseHttpsRedirection(); }
+app.UseDefaultFiles();
+app.UseStaticFiles();
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
 app.Run();
+public partial class Program { }

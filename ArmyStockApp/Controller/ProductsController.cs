@@ -1,9 +1,12 @@
+using Microsoft.AspNetCore.Authorization;
+using MongoDB.Bson;
 using ArmyStockApp.Models;
 using ArmyStockApp.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ArmyStockApp.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
@@ -22,6 +25,7 @@ namespace ArmyStockApp.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(string id)
         {
+            if (!ObjectId.TryParse(id, out _)) return BadRequest("Invalid product ID");
             var product = await _service.GetByIdAsync(id);
             if (product == null) return NotFound();
             return Ok(product);
@@ -30,6 +34,7 @@ namespace ArmyStockApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(Product product)
         {
+            product.Id = null;
             await _service.CreateAsync(product);
             return Ok(product);
         }
@@ -37,6 +42,7 @@ namespace ArmyStockApp.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(string id, [FromBody]Product updated)
         {
+            if (!ObjectId.TryParse(id, out _)) return BadRequest("Invalid product ID");
             var existing = await _service.GetByIdAsync(id);
             if (existing == null) return NotFound();
 
@@ -48,6 +54,7 @@ namespace ArmyStockApp.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
+            if (!ObjectId.TryParse(id, out _)) return BadRequest("Invalid product ID");
             var existing = await _service.GetByIdAsync(id);
             if (existing == null) return NotFound();
 
